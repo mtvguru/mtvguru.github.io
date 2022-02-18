@@ -1,0 +1,631 @@
+<!doctype html>
+<html>
+<meta charset="UTF-8">
+<!--
+0x93321165acc35263edd18bda7c2437f2a758f2ec		moonswap	masterchef
+0xabcdc91b5f8746a6e5298c6ba04c72e29ebd2460		kucoin		hotwallet
+0x4c659709750567bd505db6fab163c107bea9f161		moonswap	xmoon
+
+-->
+<head>
+<meta name="description" content="All Granaries - MTV.guru : Kompound Protocol">
+<meta name="keywords" content="Granary, Finance, Compound, Vault, Interest, Decentralized Finance, defi, yield farming, Guru Network, MultiVAC, MTV">
+<title>All Granaries - MTV.guru</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="https://ftm.guru/crypto-icons/64.png"/>
+<style>
+*{
+scroll-behavior: smooth !important;
+}
+body {
+  background:#17082f;
+  color: white;
+  margin:auto;
+  font-family:helvetica nueve, helvetica, robotica, ubuntu, roboto, sans-serif;
+}
+.body{
+  margin: 8%
+}
+.t2 {
+  padding:5px;
+  background: #6f42c1;
+  width: calc(100%-10px);
+  display:flex;
+  flex-wrap: wrap;
+  position:sticky;
+  top:0;
+}
+
+.t2 input{
+  width: 70vw;
+  background:#224;
+  color:white;
+  border-radius:10px;
+  border:none;
+  height:25px;
+  margin:auto
+}
+#in2 {width: 20vw;}
+.topbar {
+  padding:5px;
+  background: #6f42c1;
+  width: calc(100%-10px);
+  display:flex;
+  flex-wrap: wrap;
+}
+.topbar a, details a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: bolder;
+  margin: auto
+}
+.topbar a:first-child{font-size: 2em}
+h1{font-size: 3em}
+h2{}
+h1,h2,h3{color:#32fbe2;}
+
+.lowerbar{
+  font-size: 1.25em;
+  font-weight: bolder;
+}
+.lowerbar a{
+  font-size: 0.75em;
+  font-weight: lighter;
+  padding: 10px 10px 10px 0px;
+  color:#32fbe2;
+  text-decoration: none
+}
+.lowerbar img{width:24px;height:24px}
+.lowerbar .subimg{width:16px;height:16px;position: relative;right:9px;top:4px;margin-right:-11px}
+.hr1{
+  color: transparent;
+  border-top: 16px dotted #ea39b8;
+  max-width: 50%
+}
+.fore{color: gold !important;font-weight:400;font-size:1.337em}
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+}
+.card{
+  margin:10px 20px 10px 0px;
+  width: 190px;
+  padding: 20px;
+  border: 2px solid #1ea;
+  border-radius: 5px;
+  background:rgba(16,240,80,0.15);
+}
+.card hr{color: #1ea;border:solid 2px}
+.card sub{font-size: 1em}
+.card sup{font-size: 1.5em}
+.card:hover{
+  transform: translate(5px,-5px);
+  box-shadow: -5px 5px 5px rgba(16,240,80,0.75);
+  transition: 0.25s;
+  background: rgba(16,140,180,0.25);
+  cursor:zoom-in;
+}
+.ki img {
+  position: relative;
+  right:0;
+  left: 8px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  box-shadow: 0 0 2px 2px rgba(16,240,80,1);
+}
+.cardapr span:first-child{font-size: 1em}
+.ki img:first-child{left: 16px}
+.ki{text-align: right}
+.fn{
+  max-height: 28px;
+  position: relative;
+  top: -5px;
+  font-size:1em;
+}
+.fn img {
+  position: relative;
+  top:10px;
+  margin-right: 8px;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  box-shadow: 0 0 2px 2px rgba(16,180,240,0.5);
+}
+.fn img:nth-child(2) {margin: 0 -10px}
+.ib {
+  position: relative;
+  top:-24px !important;
+  left:8px !important;
+  width: 22px !important;
+  height:22px !important;
+}
+.iib {
+  position: relative;
+  top:-6px !important;
+  left:-12px !important;
+  width: 22px !important;
+  height:22px !important;
+}
+.cardapr{display:grid;grid-template-columns:auto auto;font-weight: bolder;font-size:1.2em}
+.bigapr{font-size: 1em;font-weight:bolder}
+strike{color: pink;font-style: italic;font-weight: lighter;font-size:1.2em}
+ul{font-size:1.1em}
+ul i{font-size:0.85em;}
+/*some*/
+.ddb {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: aqua;
+  border: none;
+  color: #000;
+  text-align: center;
+  font-size: 1.25em;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.ddb span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.ddb span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.ddb:hover span {
+  padding-right: 25px;
+}
+
+.ddb:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.card2{background: #222;color: grey;border:2px solid gray;cursor:not-allowed !important;}
+.cardhide{display:none}
+.card2:hover{transform: none;box-shadow: none}
+.summore{margin: 5px 5% -5px;font-size:0.7em;color: aqua;font-style:italic;display:none}
+.summnum,.summtvl{font-size: 1.1em;color: white;font-weight: bold}
+summary.fore:hover{cursor: cell}
+.sum1num{color: white;font-weight: /*bold*/}
+
+td{font-family:mono;text-align:right;padding:4px 16px;min-width:max-content;font-size:1.25em;}
+td a{color: #fff;text-decoration:underline dotted #1ea;cursor: zoom-in}
+#pfd{font-size: 2.5em;font-weight: bold;}
+thead tr td{font-weight: bold;font-size: 1.2em;text-align: center;text-decoration:underline dotted gold;cursor: alias}
+.toggs{margin: 1%}
+details{font-size: 0.7em}
+td:first-child, thead tr td{font-family:inherit !important}
+@media(min-width:641px){
+  details{font-size: 1rem}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+	<a href="">🌾Granaries🌾	</a>
+	<a href="../index.html">MTV.guru</a>
+	<a href="../index.html">MTVScan</a>
+	<a href="../index.html">Airdop Tool</a>
+	<div class="lowerbar" align="center">
+		<a target="_blank" href="https://fmc.guru"><im  src="https://ftm.guru/crypto-icons/mtv.png"></a>
+		<a target="_blank" href="https://kcc.guru"><im  src="https://ftm.guru/crypto-icons/kcc.png"></a>
+		<a target="_blank" href="https://ftm.guru"><im  src="https://ftm.guru/crypto-icons/ftm.svg"></a>
+	</div>
+	<!--
+	<a href="">FMC.guru</a>
+	<a href="">Others</a>
+	<a href="">Kompound</a>
+	<a href="">T</a>
+	<a href="">T</a>
+	<a href="">D</a>
+	-->
+</div>
+<div class="t2">
+<input onchange="$('in2').value = eval(this.value);" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();" placeholder="Calculator!">
+<input id="in2" placeholder="Answers..">
+</div>
+<div class="body">
+
+<br><br><br><br><br><br><br><br>
+<div align="center" onclick="cw()">
+	<span id="pfd">💰<span id="pf">0.000</span><sup style="font-size:0.5em;position:relative;top: -14px;">⟳</sup></span>
+	<br>Portfolio Valuation (USD)<br>
+	<button id="btn-connect">Connect a Wallet?</button>
+</div>
+<br><br><br><br>
+<input id="gaoin" placeholder="base input" value="1e15">
+<button onclick="bro()">bro!</button>
+<div style="overflow:auto;text-align:center">
+	<table align="center">
+		<thead><tr>
+			<td onclick="sortit(0,'allr')">Absolute</td>
+			<td onclick="sortit(1,'allr')">Relative</td>
+			<td onclick="sortit(2,'allr')">In.Asset</td>
+			<td onclick="sortit(3,'allr')">Out.Asset</td>
+			<td onclick="sortit(4,'allr')">In.Amount</td>
+			<td onclick="sortit(5,'allr')">Out.Amount</td>
+			<td onclick="sortit(6,'allr')">Trade.Route</td>
+		</tr></thead>
+		<tbody id="allr"></tbody>
+	</table>
+</div>
+
+<br><br><br><br>
+<div style="overflow:auto;text-align:center">
+	<table align="center">
+		<thead><tr>
+			<td onclick="sortit(0,'allp')">Base Liquidity</td>
+			<td onclick="sortit(1,'allp')">Pool Pair</td>
+			<td onclick="sortit(2,'allp')">Quote Liquidity</td>
+			<td onclick="sortit(3,'allp')">Q/B</td>
+			<td onclick="sortit(4,'allp')">B/Q</td>
+			<td onclick="sortit(5,'allp')">Freshness</td>
+			<td onclick="sortit(6,'allp')">Market</td>
+		</tr></thead>
+		<tbody id="allp"></tbody>
+	</table>
+</div>
+
+<br><br><br><br><br><br>
+<hr class="hr1">
+<br><br><br><br>
+<div id="cw_m"></div>
+
+<br><br><br><br><br><br>
+<hr class="hr1">
+<br><br><br><br>
+<div align="center"><i>Want to see more?<br><br>
+<a href="mailto:ftm1337@protonmail.com">📧</a> Let us know!</i><br>
+	<div class="lowerbar">
+	<a target="_blank" href="https://twitter.com/ftm1337"><im  src="https://ftm.guru/crypto-icons/twitter.svg"></a>
+	<a target="_blank" href="https://t.me/ftm1337"><im  src="https://ftm.guru/crypto-icons/telegram.svg"></a>
+	<a target="_blank" href="https://discord.com/invite/QpyfMarNrV"><im  src="https://ftm.guru/crypto-icons/discord.svg"></a>
+	</div>
+</div>
+<br><br><br><br><br><br>
+<div onclick="pantvl()">
+	<span style="font-size:2.5em;font-weight:bold" id="pantvl" class="fore">$0.000</span><sup style="font-size:1.2em;position:relative;top: -14px;">⟳</sup><br>
+	(Total Value Locked on MTV.guru)
+</div>
+
+<br><br>
+<div class="lowerbar">Powered by Guru Network.
+<br>
+	<a target="_blank" href="https://kcc.guru">KCC.guru</a>
+	<a target="_blank" href="https://ftm.guru">FTM.guru</a>
+	<a target="_blank" href="https://fmc.guru">FMC.guru</a>
+	<a target="_blank" href="https://fmc.guru">MTV.guru</a>
+	<br><br>
+	<a target="_blank" href="https://kcc.guru"><im  src="https://ftm.guru/crypto-icons/kcc.png"></a>
+	<a target="_blank" href="https://mtv.guru"><im  src="https://ftm.guru/crypto-icons/mtv.png"></a>
+	<a target="_blank" href="https://projects.fantom.network/project-detail/6125a8b6800c225308858b02"><im  src="https://ftm.guru/crypto-icons/ftm.svg"></a>
+	<a target="_blank" href="https://fmc.guru"><im  src="https://ftm.guru/crypto-icons/FMC.svg"></a>
+	<a target="_blank" href="https://ftm.guru"><im  src="https://ftm.guru/crypto-icons/64.png"></a>
+	<a target="_blank" href="https://kcc.guru/casino"><im  src="https://ftm.guru/crypto-icons/kucino.svg"></a>
+	<a target="_blank" href="https://medium.com/@ftm1337"><im  src="https://ftm.guru/crypto-icons/medium.svg"></a>
+	<a target="_blank" href="https://www.coingecko.com/coins/elite-1337"><im  src="https://ftm.guru/crypto-icons/gecko.svg"></a>
+	<a target="_blank" href="https://coinmarketcap.com/currencies/elite-1337"><im  src="https://ftm.guru/crypto-icons/cmc.svg"></a>
+	<a target="_blank" href="https://defillama.com/protocol/ftmguru"><im  src="https://ftm.guru/crypto-icons/defillama.svg"><im  class="subimg" src="https://ftm.guru/crypto-icons/64.png"></a><a target="_blank" href="https://defillama.com/protocol/kccguru"><im  src="https://ftm.guru/crypto-icons/defillama.svg"><im  class="subimg" src="https://ftm.guru/crypto-icons/kucino.svg"></a><a target="_blank" href="https://defillama.com/protocol/ftmguru"><im  src="https://ftm.guru/crypto-icons/nomics.svg"></a>
+</div>
+
+<br><br><br><br><br><hr class="hr1">
+
+</div>
+</body>
+<script src="ethers-5.2.umd.min.js" type="application/javascript" defer="true"></script>
+<script>
+CHAINID = 62621
+RPC_URL = "https://rpc.mtv.ac"
+let provider= {};
+let signer= {};
+window.addEventListener('load',async function()
+{
+
+	if(!(window.ethereum)){$("cw_m").innerHTML = "Wallet wasn't detected!";console.log("Wallet wasn't detected!");provider = new ethers.providers.JsonRpcProvider(RPC_URL);based();bro();}
+	console.log("waitin for 3 secs..");
+	$("cw_m").innerHTML = "Connecting.. Please wait."
+	setTimeout(async () => { basetrip(); }, 3000);
+}, false);
+
+async function basetrip()
+{
+//if(window.ethereum&&Number(window.ethereum.chainId)==250){web3 = new Web3(web3.currentProvider);if(!(window.ethereum.selectedAddress==null)){cw()}}
+
+	if(!(window.ethereum)){$("cw_m").innerHTML = "Wallet wasn't detected!";console.log("Wallet wasn't detected!");provider = new ethers.providers.JsonRpcProvider(RPC_URL);return}
+	else if(!Number(window.ethereum.chainId)==CHAINID){$("cw_m").innerHTML = "Wrong network! Please Switch to "+CHAINID;provider = new ethers.providers.Web3Provider(window.ethereum);based();bro();return}
+	else if(//typeOf window.ethereum == Object &&Number(window.ethereum.chainId)
+		Number(window.ethereum.chainId)==CHAINID)
+	{
+		console.log("Recognized Ethereum Chain:", window.ethereum.chainId,CHAINID);
+		provider = new ethers.providers.Web3Provider(window.ethereum)
+		signer = provider.getSigner();
+		if(!(window.ethereum.selectedAddress==null)){console.log("Found old wallet:", window.ethereum.selectedAddress);cw();}
+	}
+	else //if(Number(window.ethereum.chainId)==CHAINID)
+	{
+		console.log("Couldn't find Ethereum Provider - ",CHAINID,window.ethereum.chainId)
+		if((typeof Number(window.ethereum.chainId) == "number")){$("cw_m").innerHTML = "Wrong network! Switch from" + Number(window.ethereum.chainId)+" to "+CHAINID}
+		provider = new ethers.providers.JsonRpcProvider(RPC_URL);
+		signer = provider.getSigner()
+		$("connect").innerHTML=`Wallet not found.<br><br><button onclick="window.location.reload()" id="btn-connect">Retry?</button>`;
+	}
+
+}
+async function cw()
+{
+	let cs = await cw2(); cs?console.log("Good to Transact"):cw2()
+}
+async function cw2()
+{
+	if(!(window.ethereum)){$("cw_m").innerHTML="Metamask not detected! Trying a refresh";console.log("Metamask not found!");window.location.reload();return(0)}
+	if(!(Number(window.ethereum.chainId)==CHAINID)){$("cw_m").innerHTML="Wrong network detected! Please switch to chain ID", CHAINID, "and refresh this page.";return(0)}
+	if(typeof provider == "undefined"){$("cw_m").innerHTML="Provider not detected! Trying a refresh";console.log("Provider not found!");window.location.reload();return(0)}
+	/*
+	if(!
+		(isFinite(Number(accounts[0])))
+		|| (isFinite(Number(window.ethereum.selectedAddress)))
+	){console.log("NAAAAAAAAAAAAAAAAA");window.location.reload();}
+	*/
+
+	//004
+	window.ethereum
+	.request({ method: 'eth_requestAccounts' })
+	.then(r=>{console.log("004: Success:",r);})	//re-curse to end curse, maybe..
+	.catch((error) => {	console.error("004 - Failure", r, error); });
+
+
+	//005
+	const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+	if(Number(accounts[0])>0){console.log("005: Success - ", accounts)}
+	else{console.log("005: Failure", accounts)}
+
+
+	/*006
+	const en6 = await window.ethereum.enable()
+	if(Number(en6[0]) > 0){console.log("006 - Success",en6)}
+	else{console.log("006 - Failure", en6)}
+	*/
+
+
+	/*003
+	try {
+      console.log("attempting cw()")
+      const addresses = await provider.request({ method: "eth_requestAccounts" });
+      console.log("addresses:",addresses)
+    } catch (e) {
+      console.log("error in request", e);
+      window.location.reload(true);
+    }
+    */
+
+    //002
+    //try{await provider.send("eth_requestAccounts", []);console.log("CWE:",e);}//await window.ethereum.enable();
+	//catch(e){console.log("CWE:",e);window.location.reload(true)}
+	console.log("doing the paints")
+	$("cw").innerHTML= (window.ethereum.selectedAddress).substr(0,10) +"..."+(window.ethereum.selectedAddress).substr(34);
+	$("cw_m").innerHTML=""
+	$("connect").style.display="none";
+	$("switch").style.display="block";
+	farm_1_f_chappro()
+	gubs();
+	return(1);
+}
+pa = [{"constant": true,"inputs": [{"internalType": "address","name": "","type": "address"},{"internalType": "address","name": "","type": "address"}],"name": "allowance","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": false,"inputs": [{"internalType": "address","name": "spender","type": "address"},{"internalType": "uint256","name": "value","type": "uint256"}],"name": "approve","outputs": [{"internalType": "bool","name": "","type": "bool"}],"payable": false,"stateMutability": "nonpayable","type": "function"},{"inputs": [{"internalType": "address","name": "guy","type": "address"}],"name": "approve","outputs": [{"internalType": "bool","name": "","type": "bool"}],"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [{"internalType": "address","name": "","type": "address"}],"name": "balanceOf","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": true,"inputs": [],"name": "decimals","outputs": [{"internalType": "uint8","name": "","type": "uint8"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": true,"inputs": [],"name": "factory","outputs": [{"internalType": "address","name": "","type": "address"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": true,"inputs": [],"name": "getReserves","outputs": [{"internalType": "uint112","name": "_reserve0","type": "uint112"},{"internalType": "uint112","name": "_reserve1","type": "uint112"},{"internalType": "uint32","name": "_blockTimestampLast","type": "uint32"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": false,"inputs": [{"internalType": "address","name": "_token0","type": "address"},{"internalType": "address","name": "_token1","type": "address"}],"name": "initialize","outputs": [],"payable": false,"stateMutability": "nonpayable","type": "function"},{"constant": true,"inputs": [],"name": "symbol","outputs": [{"internalType": "string","name": "","type": "string"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": true,"inputs": [],"name": "name","outputs": [{"internalType": "string","name": "","type": "string"}],"payable": false,"stateMutability": "view","type": "function"},{"constant": true,"inputs": [],"name": "totalSupply","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"}];
+async function based()
+{
+	for(i=0;i< pairs.length;i++)
+	{
+		getpair(i)
+	}
+}
+async function bro()
+{
+	a = Number($("gaoin").value)
+	getao(a, 0,	[0,1,2,0])
+	getao(a, 0,	[0,2,1,0])
+	getao(a, 0,	[1,0,2,1])
+	getao(a, 0,	[1,2,0,1])
+	getao(a, 0,	[2,1,0,2])
+	getao(a, 0,	[2,0,1,2])
+	//r_hr = document.createElement("tr")
+	//r_hr.innerHTML="<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>"
+	//$("allr").append(r_hr);
+
+}
+async function getao(a,r,p)
+{
+	ptr = []; ptn= [];
+	for(i=0;i< p.length;i++){ptr.push(tokes[p[i]][0]);ptn.push(tokes[p[i]][1]);}
+	ptn = ptn.join("-->")
+	console.log(a,p,ptr,ptn)
+	let o = Promise.all([gao(a,r,ptr)])
+	.then(op=>{
+		ptr = []; ptn= [];
+		for(i=0;i< p.length;i++){ptr.push(tokes[p[i]][0]);ptn.push(tokes[p[i]][1]);}
+		ptn = ptn.join("-->")
+		console.log("out",o);
+		//$("allr").innerHTML=""
+		r = document.createElement("tr")
+		r.innerHTML = `
+			<td>${p[0]==p[p.length-1]? ((op[0]/a-1)*100).toFixed(4)+"%" : "difa"}</td>
+			<td>${p[0]==p[p.length-1]? ((op[0]-a)/10**(tokes[p[p.length-1]][2])).toFixed(8): "difa"}</td>
+			<td>${tokes[p[0]][1]}</td>
+			<td>${tokes[p[p.length-1]][1]}</td>
+			<td>${(a/(10**(tokes[p[0]][2]))).toFixed((tokes[p[0]][2]))}</td>
+			<td>${(op[0]/(10**(tokes[p[p.length-1]][2]))).toFixed((tokes[p[p.length-1]][2]))}</td>
+			<td>${ptn}</td>
+			<td><button onclick="swa(${a},${ptr})">LFG</button>
+		`;
+		$("allr").append(r);
+		sortit(0,"allr");sortit(0,"allr");
+	});
+}
+async function swa(a,p)
+{
+	R = new ethers.Contract(rutrs[r][0],rabi,provider);
+	let txr = await R.swapExactTokensForTokensSupportingFeeOnTransfer(a,a,p,window.ethereum.selectedAddress,Date.now/1e3+100)
+	alert("Broadcasting:\n\n" + txr);
+	let txR = await txr.wait();
+	alert("Transacted:\n\n" + txR )
+}
+async function getpair(pi)
+{
+	const ii=pi;
+	p = new ethers.Contract(pairs[i][3], pa, provider);
+	//$("cw_m").innerHTML+=("<hr>trying pair["+ii+"] = "+pairs[ii][3]);
+	g= (await p.getReserves())
+	//$("cw_m").innerHTML+=("<br>made pair["+ii+"] = "+p.address);
+	Promise.resolve(g).then(r=>{
+		//$("cw_m").innerHTML+=("<br>painting pair["+ii+"] = "+p.address+" with r[0] = "+r[0]);
+		pairs[ii][0] = Number(r[0]);
+		pairs[ii][1] = Number(r[1]);
+		pairs[ii][2] = Number(r[2]);
+		pairs[ii][9] = (pairs[ii][1]/10**pairs[ii][8])/(pairs[ii][0]/10**pairs[ii][6]);
+		pairs[ii][10]= (pairs[ii][0]/10**pairs[ii][6])/(pairs[ii][1]/10**pairs[ii][8]);
+		paint()
+	})
+}
+function paint()
+{
+	$("allp").innerHTML=""
+	for(i=0;i< pairs.length;i++)
+	{
+		r = document.createElement("tr")
+		t = (new Date(Date.now() - Number(pairs[i][2])*1e3))
+		t = (t.getUTCFullYear()-1970)+"/"+t.getUTCMonth()+"/"+(t.getUTCDate()-1)+"+"+t.getUTCHours()+":"+t.getUTCMinutes()+":"+t.getUTCSeconds();
+		r.innerHTML = `
+			<td>${(pairs[i][0]/10**pairs[i][6]).toFixed(6)}</td>
+			<td>${pairs[i][5]+"-"+pairs[i][7]}</td>
+			<td>${(pairs[i][1]/10**pairs[i][8]).toFixed(6)}</td>
+			<td>${(pairs[i][ 9]).toFixed(6)}</td>
+			<td>${(pairs[i][10]).toFixed(6)}</td>
+			<td>${t}</td>
+			<td>${pairs[i][4]}</td>
+		`;
+		$("allp").append(r)
+	}
+	copsca()
+}
+pairs = [
+	[0,	0,	0,	"0x6184E61aA610eFd4a37EC5E6b51f4cC5042e8fA0", 	"Moonswap", "BUSD",	18,	"WMTV",	18,	0.0,	0.0],
+	[0,	0,	0,	"0x57e962Ac51b5b197aA0f11e8A0a42172A706a70C", 	"Moonswap", "MOON",	18,	"WMTV",	18,	0.0,	0.0],
+	[0,	0,	0,	"0xbdE12b1a40d6E1B3f4558fBaADE2A60961e713e6", 	"Moonswap", "MOON",	18,	"BUSD",	18,	0.0,	0.0],
+]
+tokes = [
+	["0x4c4a5d20f1ee40eaacb6a7787d20d16b7997363b",	"WMTV",		18],
+	["0x338a6997011c4eee53822837c4f95bbba3a0a7f5",	"BUSD",		18],
+	["0x0fed6177c230a6091e58d0081dcd31f88a256185",	"MOON",		18],
+]
+rutrs = [
+	["0xf2350ebaa37d6e8ecaf00422e72cb7e5426a06e8",	"Moonswap"],
+]
+function fornum(n,d)
+{
+	_n=(Number(n)/10**Number(d));
+	n_=_n;
+	if(_n>1e18){n_=(_n/1e18).toFixed(2)+"Qt"}
+	else if(_n>1e15){n_=(_n/1e15).toFixed(2)+"Qd"}
+	else if(_n>1e12){n_=(_n/1e12).toFixed(2)+"Tn"}
+	else if(_n>1e9){n_=(_n/1e9).toFixed(2)+"Bn"}
+	else if(_n>1e6){n_=(_n/1e6).toFixed(2)+"Mn"}
+	else if(_n>1e3){n_=(_n/1e3).toFixed(2)+"Th"}
+	else if(_n>0){n_=(_n/1e0).toFixed(5)+""}
+	return(n_);
+}
+function $(_) {return document.getElementById(_);}
+function fornumstd(n,d){return Number((Number(n)/10**d).toFixed(2)).toLocaleString()}
+async function gao(ain,r,pat)
+{
+	R = new ethers.Contract(rutrs[r][0],rabi,provider);
+	let outs = await R.getAmountsOut(ain.toFixed(),pat);
+	out=Number(outs[outs.length-1])
+	console.log(out);
+	return out;
+}
+rabi = [{"inputs":[{"internalType":"uint256","name":"amountIn","type":"uint256"},{"internalType":"uint256","name":"amountOutMin","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"deadline","type":"uint256"}],"name":"swapExactTokensForTokensSupportingFeeOnTransferTokens","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amountIn","type":"uint256"},{"internalType":"address[]","name":"path","type":"address[]"}],"name":"getAmountsOut","outputs":[{"internalType":"uint256[]","name":"amounts","type":"uint256[]"}],"stateMutability":"view","type":"function"}]
+function sortit(n,el) {
+  var t, r, z, i, x, y, v, b, c = 0;
+  t = document.getElementById(el);
+  z = true;
+  b = "a";
+  while (z) {
+    z = false;
+    r = t.rows;
+    for (i = 0; i < (r.length - 1); i++) {
+      v = false;
+      x = (r[i].getElementsByTagName("TD")[n].innerHTML).replaceAll(/,| |\.|\$|%/g,'');
+      if(isFinite(x)){x=Number(x)}else{x=x.toLowerCase()}
+      y = (r[i + 1].getElementsByTagName("TD")[n].innerHTML).replaceAll(/,| |\.|\$|%/g,'');
+      if(isFinite(y)){y=Number(y)}else{y=y.toLowerCase()}
+      if (b == "a") {
+        if ((x) > (y)) {
+          v= true;
+          break;
+        }
+      } else if (b == "d") {
+        if ((x) < (y)) {
+          v = true;
+          break;
+        }
+      }
+    }
+    if (v) {
+      r[i].parentNode.insertBefore(r[i + 1], r[i]);
+      z = true;
+      c ++;
+    } else {
+      if (c == 0 && b == "a") {
+        b = "d";
+        z = true;
+      }
+    }
+  }
+}
+const addCSS = s => document.head.appendChild(document.createElement("style")).innerHTML=s;
+async function cw()
+{
+	if(!(window.ethereum)){console.log("Metamask not detected!");return(0)}
+	if(!(Number(window.ethereum.chainId)==CHAINID)){console.log("Wrong network detected!");return(0)}
+	await window.ethereum.enable();
+	$("btn-connect").innerHTML= (window.ethereum.selectedAddress).substr(0,10) +"..."+(window.ethereum.selectedAddress).substr(34);
+	$("btn-connect").style.display="none";
+	var sheet = document.createElement('style');
+	$("btn-connect").style.display="none";
+	addCSS("td:nth-child(2){display:block}");
+	$("cw_m").innerHTML +=("<hr>found user:"+(window.ethereum.selectedAddress)+ "printing portfolio")
+	$(el).innerHTML = ""
+}
+function copsca()
+{
+	rs=document.getElementsByTagName("td");
+	for(i=0;i< rs.length;i++)
+	{
+		rs[i].setAttribute("onClick","copsc(this)");
+		rs[i].style.cursor="copy";
+	}
+}
+function copsc(el)
+{
+	var inp =document.createElement('input');
+	document.body.appendChild(inp)
+	inp.value = el.innerText;
+	inp.select();
+	document.execCommand('copy',false);
+	inp.remove();
+}
+</script>
+</html>
