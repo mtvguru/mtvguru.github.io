@@ -488,16 +488,16 @@ async function getao(a,r,p)
 			<td>${(a/(10**(tokes[p[0]][2]))).toFixed((tokes[p[0]][2]))}</td>
 			<td>${(op[0]/(10**(tokes[p[p.length-1]][2]))).toFixed((tokes[p[p.length-1]][2]))}</td>
 			<td>${ptn}</td>
-			<td><button onclick="swa(${a},${ptr})">LFG</button>
+			<td><button onclick="swa(${a},${rutrs[r][0]},${ptr})">LFG</button>
 		`;
 		$("allr").append(r);
 		copsca("allp")
 		sortit(0,"allr");sortit(0,"allr");
 	});
 }
-async function swa(a,p)
+async function swa(a,r,p)
 {
-	R = new ethers.Contract(rutrs[r][0],rabi,provider);
+	R = new ethers.Contract(r,rabi,provider);
 	let txr = await R.swapExactTokensForTokensSupportingFeeOnTransfer(a,a,p,window.ethereum.selectedAddress,Date.now/1e3+100)
 	alert("Broadcasting:\n\n" + txr);
 	let txR = await txr.wait();
