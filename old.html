@@ -240,13 +240,6 @@ td:first-child, thead tr td{font-family:inherit !important}
 </div>
 <div class="body">
 
-<br><br><br><br><br><br><br><br>
-<div align="center" onclick="cw()">
-	<span id="pfd">💰<span id="pf">0.000</span><sup style="font-size:0.5em;position:relative;top: -14px;">⟳</sup></span>
-	<br>Portfolio Valuation (USD)<br>
-	<button id="btn-connect">Connect a Wallet?</button>
-</div>
-<br><br><br><br>
 <input id="gaoin" placeholder="base input" value="1e15">
 <button onclick="bro()">bro!</button>
 <div style="overflow:auto;text-align:center">
@@ -280,6 +273,19 @@ td:first-child, thead tr td{font-family:inherit !important}
 	</table>
 </div>
 
+<div id="connect">
+	Please connect your web3 wallet.
+	<br><br>
+	<button onclick="cw()" id="btn-connect">Connect</button>
+</div>
+	<br>
+	<span id="cw_m"></span><br>
+<div id="switch">
+	A web3 wallet is now connected.
+	<button onclick="cw()" id="btn-switch">Switch?</button>
+	<br>
+	<span id="cw"></span>
+</div>
 <br><br><br><br><br><br>
 <hr class="hr1">
 <br><br><br><br>
@@ -471,6 +477,7 @@ async function getao(a,r,p)
 			<td><button onclick="swa(${a},${ptr})">LFG</button>
 		`;
 		$("allr").append(r);
+		copsca("allp")
 		sortit(0,"allr");sortit(0,"allr");
 	});
 }
@@ -518,7 +525,7 @@ function paint()
 		`;
 		$("allp").append(r)
 	}
-	copsca()
+	copsca("allp")
 }
 pairs = [
 	[0,	0,	0,	"0x6184E61aA610eFd4a37EC5E6b51f4cC5042e8fA0", 	"Moonswap", "BUSD",	18,	"WMTV",	18,	0.0,	0.0],
@@ -609,9 +616,9 @@ async function cw()
 	$("cw_m").innerHTML +=("<hr>found user:"+(window.ethereum.selectedAddress)+ "printing portfolio")
 	$(el).innerHTML = ""
 }
-function copsca()
+function copsca(parel)
 {
-	rs=document.getElementsByTagName("td");
+	rs=$(el).getElementsByTagName("td");
 	for(i=0;i< rs.length;i++)
 	{
 		rs[i].setAttribute("onClick","copsc(this)");
