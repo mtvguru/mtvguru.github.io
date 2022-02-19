@@ -245,13 +245,14 @@ td:first-child, thead tr td{font-family:inherit !important}
 <div style="overflow:auto;text-align:center">
 	<table align="center">
 		<thead><tr>
-			<td onclick="sortit(0,'allr')">Absolute</td>
-			<td onclick="sortit(1,'allr')">Relative</td>
-			<td onclick="sortit(2,'allr')">In.Asset</td>
-			<td onclick="sortit(3,'allr')">Out.Asset</td>
-			<td onclick="sortit(4,'allr')">In.Amount</td>
-			<td onclick="sortit(5,'allr')">Out.Amount</td>
-			<td onclick="sortit(6,'allr')">Trade.Route</td>
+			<td>🚀</td>
+			<td onclick="sortit(1,'allr')">Absolute</td>
+			<td onclick="sortit(2,'allr')">Relative</td>
+			<td onclick="sortit(3,'allr')">In.Asset</td>
+			<td onclick="sortit(4,'allr')">Out.Asset</td>
+			<td onclick="sortit(5,'allr')">In.Amount</td>
+			<td onclick="sortit(6,'allr')">Out.Amount</td>
+			<td onclick="sortit(7,'allr')">Trade.Route</td>
 		</tr></thead>
 		<tbody id="allr"></tbody>
 	</table>
@@ -471,7 +472,7 @@ async function getao(a,r,p)
 	ptr = []; ptn= [];
 	for(i=0;i< p.length;i++){ptr.push(tokes[p[i]][0]);ptn.push(tokes[p[i]][1]);}
 	ptn = ptn.join("-->")
-	console.log(a,p,ptr,ptn)
+	console.log("log getao:",a,r,p,ptr,ptn)
 	let o = Promise.all([gao(a,r,ptr)])
 	.then(op=>{
 		ptr = []; ptn= [];
@@ -479,8 +480,9 @@ async function getao(a,r,p)
 		ptn = ptn.join("-->")
 		console.log("out",o);
 		//$("allr").innerHTML=""
-		r = document.createElement("tr")
-		r.innerHTML = `
+		tr = document.createElement("tr")
+		tr.innerHTML = `
+			<td><span style="cursor:pointer" onclick="swa(${a},${rutrs[r][0]},${ptr});console.log('button',a,r,p)">🚀</span>
 			<td>${p[0]==p[p.length-1]? ((op[0]/a-1)*100).toFixed(4)+"%" : "difa"}</td>
 			<td>${p[0]==p[p.length-1]? ((op[0]-a)/10**(tokes[p[p.length-1]][2])).toFixed(8): "difa"}</td>
 			<td>${tokes[p[0]][1]}</td>
@@ -488,9 +490,8 @@ async function getao(a,r,p)
 			<td>${(a/(10**(tokes[p[0]][2]))).toFixed((tokes[p[0]][2]))}</td>
 			<td>${(op[0]/(10**(tokes[p[p.length-1]][2]))).toFixed((tokes[p[p.length-1]][2]))}</td>
 			<td>${ptn}</td>
-			<td><button onclick="swa(${a},${rutrs[r][0]},${ptr})">LFG</button>
 		`;
-		$("allr").append(r);
+		$("allr").append(tr);
 		copsca("allp")
 		sortit(0,"allr");sortit(0,"allr");
 	});
@@ -632,7 +633,7 @@ async function cw()
 }
 function copsca(parel)
 {
-	rs=$(el).getElementsByTagName("td");
+	rs=$(parel).getElementsByTagName("td");
 	for(i=0;i< rs.length;i++)
 	{
 		rs[i].setAttribute("onClick","copsc(this)");
