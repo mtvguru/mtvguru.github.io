@@ -482,7 +482,7 @@ async function getao(a,r,p)
 		//$("allr").innerHTML=""
 		tr = document.createElement("tr")
 		tr.innerHTML = `
-			<td><span style="cursor:pointer" onclick="swa(${a},${rutrs[r][0]},[${ptr}]);console.log('button',a,r,p)">🚀</span>
+			<td><span style="cursor:pointer" onclick="swa(${a},'${rutrs[r][0]}',[${a2s(ptr)}]);console.log('button',a,r,p)">🚀</span>
 			<td>${p[0]==p[p.length-1]? ((op[0]/Number(a)-1)*100).toFixed(4)+"%" : "difa"}</td>
 			<td>${p[0]==p[p.length-1]? ((op[0]-Number(a))/10**(tokes[p[p.length-1]][2])).toFixed(8): "difa"}</td>
 			<td>${tokes[p[0]][1]}</td>
@@ -495,6 +495,13 @@ async function getao(a,r,p)
 		copsca("allp")
 		sortit(0,"allr");sortit(0,"allr");
 	});
+}
+function a2s(ar){
+	st='';
+	for(j=0;j< ar.length;j++){
+		st+= '"'+ar[j]+'",';
+	}
+	return st.substring(0,st.length-1)
 }
 async function swa(a,r,p)
 {
