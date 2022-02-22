@@ -240,7 +240,7 @@ td:first-child, thead tr td{font-family:inherit !important}
 </div>
 <div class="body">
 
-<input id="gaoin" placeholder="base input" value="1e15">
+<input id="gaoin" placeholder="base input" value="1e18">
 <button onclick="bro()">bro!</button>
 <div style="overflow:auto;text-align:center">
 	<table align="center">
@@ -455,7 +455,7 @@ async function based()
 }
 async function bro()
 {
-	a = Number($("gaoin").value)
+	a = BigInt(Number($("gaoin").value))
 	getao(a, 0,	[0,1,2,0])
 	getao(a, 0,	[0,2,1,0])
 	getao(a, 0,	[1,0,2,1])
@@ -482,12 +482,12 @@ async function getao(a,r,p)
 		//$("allr").innerHTML=""
 		tr = document.createElement("tr")
 		tr.innerHTML = `
-			<td><span style="cursor:pointer" onclick="swa(${a},${rutrs[r][0]},${ptr});console.log('button',a,r,p)">🚀</span>
-			<td>${p[0]==p[p.length-1]? ((op[0]/a-1)*100).toFixed(4)+"%" : "difa"}</td>
-			<td>${p[0]==p[p.length-1]? ((op[0]-a)/10**(tokes[p[p.length-1]][2])).toFixed(8): "difa"}</td>
+			<td><span style="cursor:pointer" onclick="swa(${a},${rutrs[r][0]},[${ptr}]);console.log('button',a,r,p)">🚀</span>
+			<td>${p[0]==p[p.length-1]? ((op[0]/Number(a)-1)*100).toFixed(4)+"%" : "difa"}</td>
+			<td>${p[0]==p[p.length-1]? ((op[0]-Number(a))/10**(tokes[p[p.length-1]][2])).toFixed(8): "difa"}</td>
 			<td>${tokes[p[0]][1]}</td>
 			<td>${tokes[p[p.length-1]][1]}</td>
-			<td>${(a/(10**(tokes[p[0]][2]))).toFixed((tokes[p[0]][2]))}</td>
+			<td>${(Number(a)/(10**(tokes[p[0]][2]))).toFixed((tokes[p[0]][2]))}</td>
 			<td>${(op[0]/(10**(tokes[p[p.length-1]][2]))).toFixed((tokes[p[p.length-1]][2]))}</td>
 			<td>${ptn}</td>
 		`;
@@ -498,8 +498,8 @@ async function getao(a,r,p)
 }
 async function swa(a,r,p)
 {
-	R = new ethers.Contract(r,rabi,provider);
-	let txr = await R.swapExactTokensForTokensSupportingFeeOnTransfer(a,a,p,window.ethereum.selectedAddress,Date.now/1e3+100)
+	R = new ethers.Contract(rutrs[0][0],rabi,signer)
+	let txr = await R.swapExactTokensForTokensSupportingFeeOnTransferTokens(a,a,p,window.ethereum.selectedAddress,Date.now/1e3+100)
 	alert("Broadcasting:\n\n" + txr);
 	let txR = await txr.wait();
 	alert("Transacted:\n\n" + txR )
@@ -573,7 +573,7 @@ function fornumstd(n,d){return Number((Number(n)/10**d).toFixed(2)).toLocaleStri
 async function gao(ain,r,pat)
 {
 	R = new ethers.Contract(rutrs[r][0],rabi,provider);
-	let outs = await R.getAmountsOut(ain.toFixed(),pat);
+	let outs = await R.getAmountsOut(ain,pat);
 	out=Number(outs[outs.length-1])
 	console.log(out);
 	return out;
