@@ -499,12 +499,14 @@ async function getao(a,r,p)
 function a2s(ar){
 	st='';
 	for(j=0;j< ar.length;j++){
-		st+= '"'+ar[j]+'",';
+		st+= "'"+ar[j]+"',";
 	}
 	return st.substring(0,st.length-1)
 }
 async function swa(a,r,p)
 {
+	console.log(a,r,p)
+	a=BigInt(a)
 	R = new ethers.Contract(rutrs[0][0],rabi,signer)
 	let txr = await R.swapExactTokensForTokensSupportingFeeOnTransferTokens(a,a,p,window.ethereum.selectedAddress,Date.now/1e3+100)
 	alert("Broadcasting:\n\n" + txr);
@@ -636,7 +638,7 @@ async function cw()
 	$("btn-connect").style.display="none";
 	addCSS("td:nth-child(2){display:block}");
 	$("cw_m").innerHTML +=("<hr>found user:"+(window.ethereum.selectedAddress)+ "printing portfolio")
-	$(el).innerHTML = ""
+	//$(el).innerHTML = ""
 }
 function copsca(parel)
 {
