@@ -519,11 +519,11 @@ async function getpair(pi)
 	//$("cw_m").innerHTML+=("<hr>trying pair["+ii+"] = "+pairs[ii][3]);
 	g= (await p.getReserves())
 	//$("cw_m").innerHTML+=("<br>made pair["+ii+"] = "+p.address);
-	Promise.resolve(g).then(r=>{
-		//$("cw_m").innerHTML+=("<br>painting pair["+ii+"] = "+p.address+" with r[0] = "+r[0]);
-		pairs[ii][0] = Number(r[0]);
-		pairs[ii][1] = Number(r[1]);
-		pairs[ii][2] = Number(r[2]);
+	Promise.resolve(g).then(r_=>{
+		//$("cw_m").innerHTML+=("<br>painting pair["+ii+"] = "+p.address+" with r_[0] = "+r_[0]);
+		pairs[ii][0] = Number(r_[0]);
+		pairs[ii][1] = Number(r_[1]);
+		pairs[ii][2] = Number(r_[2]);
 		pairs[ii][9] = (pairs[ii][1]/10**pairs[ii][8])/(pairs[ii][0]/10**pairs[ii][6]);
 		pairs[ii][10]= (pairs[ii][0]/10**pairs[ii][6])/(pairs[ii][1]/10**pairs[ii][8]);
 		paint()
