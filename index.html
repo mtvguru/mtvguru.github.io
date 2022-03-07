@@ -194,12 +194,17 @@ details{font-size: 0.7em}
 td:last-child{display:none}
 td:first-child, thead tr td{font-family:inherit !important}
 .head2{display:none}
+.partners{display: grid;grid-template-columns: auto}
+.partner{display: grid;grid-template-columns: auto auto;}
+.partner div{word-wrap:  anywhere}
+.partner div {margin: 0 8px;}
+.partner img {height:128px;width:128px}
 @media(min-width:641px){
   details{font-size: 1rem}
   .card{width:40%;margin:4% auto}
   .head2{display:block}
-}
-</style>
+  .partners{display: grid;grid-template-columns: 50% 50%}
+}</style>
 </head>
 <body>
 <div class="topbar">
@@ -349,12 +354,31 @@ Get the most out of MultiVAC with our tailor-made Utilities, dApps, Service & st
 
 <h2>Partners & Associates (1)</h2>
 
-<img src="https://ftm.guru/icons/htz.png" style="height:128px;width:128px">
 <br><br>
-<span class="fore">TheGreatReset.finance</span>
-<br><br>
-CyberSwap (DEX) & Children of Zion (NFT Marketplace).
-<br><br>
+<div class="partners">
+	<div class="partner">
+		<img src="https://ftm.guru/icons/256.png">
+		<div>
+			<span class="fore">Guru Network</span>
+			<br><br>
+			A Multi-faceted growth hacker for indie projects. Tools, Services, niche utility-applications, bespoke product customization, liquidity enhancement & data analytics products provider.
+			<br><br><br><br>
+		</div>
+	</div>
+	<div class="partner">
+		<img src="https://ftm.guru/icons/htz.png">
+		<div>
+			<span class="fore">The Great Reset</span>
+			<br><br>
+			<li>X DAO Government</li>
+			<li>CyberSwap Multi-Chain DEX</li>
+			<li>Children of Zion NFT Marketplace</li>
+			<li>Hertz Yield Farm</li>
+			<br><br><br><br>
+		</div>
+	</div>
+</div>
+
 
 <br><br><br><br><br><br>
 
@@ -429,7 +453,7 @@ window.addEventListener(
 
 function pantvl()
 {
-	pt=new web3.eth.Contract([{"constant": true,"inputs": [],"name": "tvl","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"}],"0xdf486980df72446a5eff76263efb2fa9391be136")
+	pt=new web3.eth.Contract([{"constant": true,"inputs": [],"name": "tvl","outputs": [{"internalType": "uint256","name": "","type": "uint256"}],"payable": false,"stateMutability": "view","type": "function"}],"0xe345A50C33e5c9D0284D6fF0b891c4Fc99a9C117")
 	pt.methods.tvl().call((e,r)=>{$("pantvl").innerHTML = "$"+(Number(r)/1e18).toLocaleString()});
 }
 function fornum(n,d)
