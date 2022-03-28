@@ -246,8 +246,8 @@ td:first-child, thead tr td{font-family:inherit !important}
 	<table align="center">
 		<thead><tr>
 			<td>🚀</td>
-			<td onclick="sortit(1,'allr')">Absolute</td>
-			<td onclick="sortit(2,'allr')">Relative</td>
+			<td onclick="sortit(1,'allr')">Relative</td>
+			<td onclick="sortit(2,'allr')">Absolute</td>
 			<td onclick="sortit(3,'allr')">In.Asset</td>
 			<td onclick="sortit(4,'allr')">Out.Asset</td>
 			<td onclick="sortit(5,'allr')">In.Amount</td>
@@ -456,12 +456,21 @@ async function based()
 async function bro()
 {
 	a = BigInt(Number($("gaoin").value))
+
 	getao(a, 0,	[0,1,2,0])
 	getao(a, 0,	[0,2,1,0])
 	getao(a, 0,	[1,0,2,1])
 	getao(a, 0,	[1,2,0,1])
 	getao(a, 0,	[2,1,0,2])
 	getao(a, 0,	[2,0,1,2])
+
+	getao(a, 1,	[3,4,5,3])
+	getao(a, 1,	[3,5,4,3])
+	getao(a, 1,	[4,5,3,4])
+	getao(a, 1,	[4,3,5,4])
+	getao(a, 1,	[5,4,3,5])
+	getao(a, 1,	[5,3,4,5])
+
 	//r_hr = document.createElement("tr")
 	//r_hr.innerHTML="<td>0</td><td>0</td><td>0</td><td>0</td><td>0</td>"
 	//$("allr").append(r_hr);
@@ -539,7 +548,7 @@ function paint()
 		t = (t.getUTCFullYear()-1970)+"/"+t.getUTCMonth()+"/"+(t.getUTCDate()-1)+"+"+t.getUTCHours()+":"+t.getUTCMinutes()+":"+t.getUTCSeconds();
 		rp.innerHTML = `
 			<td>${(pairs[i][0]/10**pairs[i][6]).toFixed(6)}</td>
-			<td>${pairs[i][5]+"-"+pairs[i][7]}</td>
+			<td>${pairs[i][5]+"/"+pairs[i][7]}</td>
 			<td>${(pairs[i][1]/10**pairs[i][8]).toFixed(6)}</td>
 			<td>${(pairs[i][ 9]).toFixed(6)}</td>
 			<td>${(pairs[i][10]).toFixed(6)}</td>
@@ -551,17 +560,24 @@ function paint()
 	copsca("allp")
 }
 pairs = [
-	[0,	0,	0,	"0x6184E61aA610eFd4a37EC5E6b51f4cC5042e8fA0", 	"Moonswap", "BUSD",	18,	"WMTV",	18,	0.0,	0.0],
-	[0,	0,	0,	"0x57e962Ac51b5b197aA0f11e8A0a42172A706a70C", 	"Moonswap", "MOON",	18,	"WMTV",	18,	0.0,	0.0],
-	[0,	0,	0,	"0xbdE12b1a40d6E1B3f4558fBaADE2A60961e713e6", 	"Moonswap", "MOON",	18,	"BUSD",	18,	0.0,	0.0],
+	[0,	0,	0,	"0x6184E61aA610eFd4a37EC5E6b51f4cC5042e8fA0", 	"Moonswap", 	"BUSD-ms",	18,	"WMTV-ms",	18,	0.0,	0.0],
+	[0,	0,	0,	"0x57e962Ac51b5b197aA0f11e8A0a42172A706a70C", 	"Moonswap", 	"MOON-ms",	18,	"WMTV-ms",	18,	0.0,	0.0],
+	[0,	0,	0,	"0xbdE12b1a40d6E1B3f4558fBaADE2A60961e713e6", 	"Moonswap",		"MOON-ms",	18,	"BUSD-ms",	18,	0.0,	0.0],
+	[0,	0,	0,	"0x5269308450724513887ef0d51234976d7229c18e", 	"TheGreatReset","WMTV-sh",	18,	"HTZ-tgr",	18,	0.0,	0.0],
+	[0,	0,	0,	"0xf0a21ff216f42d7b262261778b7ffe6685082169", 	"TheGreatReset","USDC-rc",	6,	"HTZ-tgr",	18,	0.0,	0.0],
+	[0,	0,	0,	"0x32f38698550d4b36168a09df49ddd8cba67eaee5", 	"TheGreatReset","WMTV-sh",	18,	"USDC-rc",	6,	0.0,	0.0],
 ]
 tokes = [
-	["0x4c4a5d20f1ee40eaacb6a7787d20d16b7997363b",	"WMTV",		18],
-	["0x338a6997011c4eee53822837c4f95bbba3a0a7f5",	"BUSD",		18],
-	["0x0fed6177c230a6091e58d0081dcd31f88a256185",	"MOON",		18],
+	["0x4c4a5d20f1ee40eaacb6a7787d20d16b7997363b",	"WMTV-ms",		18],
+	["0x338a6997011c4eee53822837c4f95bbba3a0a7f5",	"BUSD-ms",		18],
+	["0x0fed6177c230a6091e58d0081dcd31f88a256185",	"MOON-ms",		18],
+	["0x8e321596267a4727746b2f48bc8736db5da26977",	"WMTV-sh",		18],
+	["0xea1199d50ee09fa8062fd9da3d55c6f90c1babd2",	"USDC-rc",		18],
+	["0xfc0c8d38166fc417f19de5b44cfc339079a70913",	"HTZ-tgr",		18],
 ]
 rutrs = [
-	["0xf2350ebaa37d6e8ecaf00422e72cb7e5426a06e8",	"Moonswap"],
+	["0xf2350ebaa37d6e8ecaf00422e72cb7e5426a06e8",	"MoonSwap"],
+	["0x4b4c5d87fa1afe3365fa1ee9cb6c38cc6fab8fef",	"TheGreatReset"],
 ]
 function fornum(n,d)
 {
