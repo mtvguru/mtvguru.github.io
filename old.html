@@ -515,7 +515,7 @@ function a2s(ar){
 async function swa(a,r,p)
 {
 	console.log(a,r,p)
-	R = new ethers.Contract(rutrs[0][0],rabi,signer)
+	R = new ethers.Contract(r,rabi,signer)
 	let txr = await R.swapExactTokensForTokensSupportingFeeOnTransferTokens(a,a,p,window.ethereum.selectedAddress,Date.now())
 	alert("Broadcasting:\n\n" + txr);
 	let txR = await txr.wait();
