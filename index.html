@@ -69,8 +69,8 @@ h1,h2,h3{color:#32fbe2;}
 }
 .fore{color: gold !important;font-weight:400;font-size:1.337em}
 .cards{
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;  grid-template-columns: auto ;
+
 }
 .card{
   margin:10px 20px 10px 0px;
@@ -207,7 +207,9 @@ td:first-child, thead tr td{font-family:inherit !important}
   .head2{display:block}
   .partners{display: grid;grid-template-columns: 50% 50%}
   .q2{display:grid;grid-template-columns:auto auto;font-size:1.25em}
-}</style>
+  .cards{grid-template-columns: auto auto;}
+}
+</style>
 </head>
 <body>
 <div class="topbar">
@@ -271,7 +273,7 @@ td:first-child, thead tr td{font-family:inherit !important}
 		</div>
 	-->
 
-<h2>Current Offerings (12)</h2>
+<h2>Current Offerings (14)</h2>
 Get the most out of MultiVAC with our tailor-made Utilities, dApps, Service & strategic asset-management offerings.
 <br><br>
 <i class="toggs" style="border:1px dashed gold;border-radius:8px"> <input type="checkbox" checked onchange="togcar()"> Hide inactive? </i>
@@ -338,6 +340,12 @@ Get the most out of MultiVAC with our tailor-made Utilities, dApps, Service & st
 <details open><summary class="fore"><span class="fn" ></span> ⛓️ Data Analytics <span class="sum1num">(2)</span><br>
 	</summary><br>
 	<div class="cards">
+		<div class="card" onclick="window.location='https://scan.mtv.guru/apr'">
+			<span class="cardapr"><span> 🌲 VAX APR - YieldStats</span></span><br>
+			Find out APR yield earned from The Value Added eXchange (VAX) for all Liquidity Pairs!<br>
+			<br><hr><br>
+			<i>Real-time metrics sortable by Asset, Reserves, APR, ROI and more!</i>
+		</div>
 		<div class="card" onclick="window.location='https://scan.mtv.guru/dex'">
 			<span class="cardapr"><span> 📊 DEX Rankings</span></span><br>
 			List of all DEXes of MultiVAC Network with in-depth data inlcuding trade-volumes, active-markets, total value locked, net liquidity and more!<br>
@@ -380,6 +388,12 @@ Get the most out of MultiVAC with our tailor-made Utilities, dApps, Service & st
 <details open><summary class="fore"> 🤝 B2B Services <span class="sum1num">(4)</span><br>
 	</summary><br>
 	<div class="cards">
+		<div class="card" onclick="window.location='https://mtv.guru/seedr'">
+			<span class="cardapr"><span> 🌱 SeedR - Launchpad for Tokens</span></span><br>
+			SeedR is the first of its kind Multi-Chain Launchpad capable of raising funds in parallel on multiple chains simultaneously.<br>
+			<br><hr><br>
+			<i>Get in touch via any of our social communities to learn more!</i>
+		</div>
 		<div class="card" onclick="window.location='https://discord.com/invite/QpyfMarNrV'">
 			<span class="cardapr"><span> 👨‍🌾 Farm-as-a-Service (FaaS)</span></span><br>
 			We create custom Farming dApps & Smart Contracts for all projects and host them on our platform. Our Farm-Maker service is free of cost!<br>
@@ -445,7 +459,7 @@ Get the most out of MultiVAC with our tailor-made Utilities, dApps, Service & st
 
 
 
-<h2>Partners & Associates (2)</h2>
+<h2>Partners & Associates (4)</h2>
 
 <br><br>
 <div class="partners">
@@ -463,10 +477,30 @@ Get the most out of MultiVAC with our tailor-made Utilities, dApps, Service & st
 		<div>
 			<span class="fore">The Great Reset</span>
 			<br><br>
-			<li>X DAO Government</li>
-			<li>CyberSwap Multi-Chain DEX</li>
-			<li>Children of Zion NFT Marketplace</li>
-			<li>Hertz Yield Farm</li>
+			— X DAO Government
+			— CyberSwap Multi-Chain DEX
+			— Children of Zion NFT Marketplace
+			— Hertz Yield Farm.
+			<br><br><br><br>
+		</div>
+	</div>
+	<div class="partner">
+		<img src="https://ftm.guru/icons/dirt.png">
+		<div>
+			<span class="fore">MultiWorms</span>
+			<br><br>
+			— Biggest NFT-based DAO on MultiVAC
+			— First farming-partner at MTV.Guru Farmlands.
+			<br><br><br><br>
+		</div>
+	</div>
+	<div class="partner">
+		<img src="https://ftm.guru/icons/prox.png">
+		<div>
+			<span class="fore">Proxima, The Game</span>
+			<br><br>
+			— First Game-Fi project on MultiVAC
+			— First launch candidate of SeedR
 			<br><br><br><br>
 		</div>
 	</div>
